@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anoora</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+ 
+<body>
+  <script>
+    function change() {
+  const mark = document.querySelector("#mark i");
+  if (mark.classList.contains('fa-bars')) {
+    mark.classList.replace('fa-bars', 'fa-xmark');
+  } else {
+    mark.classList.replace('fa-xmark', 'fa-bars');
+  }
+}
+document.addEventListener("DOMContentLoaded", function() {
+  const li = document.querySelector('.fa-bars'); 
+
+  function mouse() {
+    this.style.color = "gold";
+  }
+
+  function mouseout() {
+    this.style.color = "black";
+  }
+
+  li.addEventListener("mouseover", mouse);
+  li.addEventListener("mouseout", mouseout);
+});
+
+
+ 
+  </script>
+  
+  <header>
+    <a href="#" class="lo">Anoora</a>
+    <input type="checkbox" id="men" onclick="change()"  >
+    <label for="men" id="mark" ><i class="fa-solid fa-bars"></i></label>
+    <nav class="bar">
+        <ul>
+            <li><a href="#"><p>Home</p> <span></span></a></li>
+            <li><a href="#"><p>About us</p>  <span></span></a></li>
+            <li><a href="#"><p>Products</p>  <span></span></a>
+                <ul>
+                    <li><a href="#" style="padding: 20px;">Indoor</a></li>
+                    <li><a href="#" style="padding: 20px;">Outdoor</a></li>
+                    <li><a href="#" style="padding: 20px;">Underwater</a></li>
+                </ul>
+            
+            </li>
+            <li><a href="#"><p>Contact Us</p>  <span></span></a></li>
+
+        </ul>
+    </nav>
+</header>
+     <!--Nav bar ends-->
+     
+ 
+
+     <div class="main-con">
+      <div class="sub1">
+        <span>
+       <h5 class="lig">LIGHT UP EVERY SPACE</h5>
+       <h1>See The Spaces You <br>Love In Their Best <br> Light. </h1>
+       <h5>From morning inspiration to the glow of a day well lived,<br> Kichler shines a light on every corner of your life</h5>
+       <a href="#" class="why">Why Anoora?
+        
+       </a>
+      </span>
+
+
+        <div class="sub2">
+          <h1 class="anoora">ANOORA <span ><div class="in"></div></span></h1>
+          <div class="sub">
+          <div class="img1">
+          <h3 >Indoor
+            <br> Lighting </h3>
+          </div>
+          <div class="img2">
+            <h3>Outdoor 
+              <br>Lighting </h3>
+          </div>
+          <div class="img3">
+            <h3>Underwater 
+              <br>Lighting </h3>
+           </div>
+        </div>
+        </div><!--sub2 ends-->
+      </div><!--sub1 ends-->
+
+     </div><!--main div ends-->
+
+
+     <h1 style="color: black;margin-top: 10px;text-align: center;width:100%;
+     height:80px;border-bottom: 2px solid lightgrey;">Collection</h1>
+
+     <div class="change-main">
+     <div class=" change-con">
+       
+        <div class="card">
+        <img id="galleryImage" src="" alt="">
+         <h1 class="h1-card" id="galleryDescription"></h1>
+         <button id="prevButton" ><i class="fa-solid fa-chevron-left"></i></button>
+         <button id="nextButton" ><i class="fa-solid fa-angle-right"></i></button>
+         <h5 class="h5-card">In the home of light, where shadows dare not roam,<br>
+          Dreams are born in brilliance, and hearts find their true home.
+        <br>
+        <br>
+          <a href="#" class="a-card">Whole home Guide</a></h5>
+        </div>
+    
+     </div><!--change-con ends-->
+    </div><!--change-main ends-->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const arr = [
+          {
+            url: "mianimg.png",
+            des: 'Home lights'
+
+          },
+          {
+            url: "indoor.png",
+            des: 'Indoor lights'
+          },
+          {
+            url: "outdoor.png",
+            des: 'Outdoor lights'
+          },
+          {
+            url: "water.png",
+            des: 'Water lights'
+          }
+        ];
+  
+        let currentIndex = 0;
+  
+        const galleryImage = document.getElementById('galleryImage');
+        const galleryDescription = document.getElementById('galleryDescription');
+  
+        function display(index){
+          galleryImage.src=arr[index].url;
+          galleryDescription.textContent=arr[index].des;
+  
+        }
+        function showNextImage() {
+          currentIndex = (currentIndex + 1) % arr.length;
+          display(currentIndex);
+        }
+        document.getElementById('prevButton').addEventListener('click',function(){
+          if(currentIndex >0){
+            currentIndex--;
+            display(currentIndex);
+          }
+        })
+  
+        document.getElementById('nextButton').addEventListener('click',function(){
+          if(currentIndex<arr.length-1 ){
+            currentIndex++;
+            display(currentIndex);
+          }
+        })
+  
+       
+        display(currentIndex);
+        setInterval(showNextImage, 5000);
+        
+  
+      });
+    </script>
+<!--change con script ends-->
+
+     <div class="box-con">
+      <div class="box1">
+       <div class="con"><span>
+        <h2>Hall Room</h2>
+        <p class="con-t">Industrial style features exposed metals,
+          <br> leathers, weathered woods with texture,<br>
+           decorative pillows and throws, round-edge <br>
+            furniture, and polished accent frames. It <br>
+             mingles industrial ruggedness with soft,<br>
+              smooth edges.</p>
+              <br>
+              
+               <a href="#" class="con-a">Explore Style ></a>
+       </span></div>
+       <span class="imgcon"><img src="box1.png" ></span>
+      </div><!--Box1 ends-->
+
+  
+
+      <div class="box2">
+        <span class="imgcon"><img src="box2.png" ></span>
+        <div class="con"><span>
+          <h2>Home office</h2>
+          <p class="con-t">Industrial style features exposed metals,
+            <br> leathers, weathered woods with texture,<br>
+             decorative pillows and throws, round-edge <br>
+              furniture, and polished accent frames. It <br>
+               mingles industrial ruggedness with soft,<br>
+                smooth edges.</p>
+                <br>
+                
+                 <a href="#" class="con-a">Explore Style ></a>
+         </span></div>
+         
+      </div><!--Box2 ends-->
+
+
+      <div class="box3">
+        <div class="con"><span>
+          <h2>Hall Room</h2>
+          <p class="con-t">Industrial style features exposed metals,
+            <br> leathers, weathered woods with texture,<br>
+             decorative pillows and throws, round-edge <br>
+              furniture, and polished accent frames. It <br>
+               mingles industrial ruggedness with soft,<br>
+                smooth edges.</p>
+                <br>
+                
+                 <a href="#" class="con-a">Explore Style ></a>
+         </span></div>
+         <span class="imgcon"><img src="box3.png" ></span>
+      </div><!--Box3 ends-->
+     </div><!--box con ends-->
+   
+
+      <div class="end">
+          <div>
+            <span>
+            <h2>Your Home Illuminated</h2>
+            <p>Find your nearest showroom or get in touch with a contractor to <br>find your best light</p>
+            <a href="#" class="buy">Where to buy</a>
+          </span>
+          </div>
+      </div><!--End ends-->
+
+
+
+
+      <footer class="footer">
+        <div class="container">
+           <div class="row1">
+               <div class="col">
+                   <h4>Company</h4>
+                   <ul>
+                       <li><a href="#">About Us</a></li>
+                       <li><a href="#">Services</a></li>
+                       <li><a href="#">Contact Us</a></li>
+                   </ul>
+               </div>
+               <div class="col">
+                   <h4>Our Products</h4>
+                   <ul>
+                       <li><a href="#">Indoor</a></li>
+                       <li><a href="#">Outdoor</a></li>
+                       <li><a href="#">Underwater</a></li>
+                   </ul>
+               </div>
+               <div class="col">
+                   <h4>Follow Us</h4>
+                   <div class="social-links">
+                       <a href="#"><i class="fab fa-facebook-f"></i></a>
+                       <a href="#"><i class="fab fa-twitter"></i></a>
+                       <a href="#"><i class="fab fa-instagram"></i></a>
+                       <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                   </div>
+               </div>
+           </div>
+        </div>
+     </footer><!--footer ends-->
+
+
+     
+
+</body>
+</html>
+
+
+
+
